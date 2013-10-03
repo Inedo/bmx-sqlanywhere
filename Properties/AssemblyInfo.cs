@@ -4,7 +4,7 @@ using System.Runtime.InteropServices;
 using Inedo.BuildMaster.Extensibility;
 
 [assembly: AssemblyTitle("SqlAnywhere")]
-[assembly: AssemblyDescription("Database integration for Sybase SQL Anywhere 12 and earlier.")]
+[assembly: AssemblyDescription("Database integration for Sybase SQL Anywhere 12 and later.")]
 
 [assembly: ComVisible(false)]
 [assembly: AssemblyCompany("Inedo, LLC")]
