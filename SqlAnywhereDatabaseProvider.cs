@@ -10,7 +10,7 @@ using Inedo.BuildMaster.Web;
 
 namespace Inedo.BuildMasterExtensions.SqlAnywhere
 {
-    [ProviderProperties("SQL Anywhere", "Connects to a SQL Anywhere database and provides change script functionality.")]
+    [ProviderProperties("SQL Anywhere", "Connects to a SQL Anywhere database and provides change script functionality.", RequiresTransparentProxy = true)]
     [CustomEditor(typeof(SqlAnywhereDatabaseProviderEditor))]
     public sealed class SqlAnywhereDatabaseProvider : DatabaseProviderBase, IChangeScriptProvider
     {
@@ -52,8 +52,6 @@ namespace Inedo.BuildMasterExtensions.SqlAnywhere
                 : Properties.Resources.dblgen12_dll_x64;
 
             var path = Path.Combine(Path.GetTempPath(), "dblgen12.dll");
-
-            Tracer.Debug("Ensuring " + path);
 
             if (!File.Exists(path))
                 File.WriteAllBytes(path, dblgen12_dll);
